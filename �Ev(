@@ -1,0 +1,20 @@
+title Fedora 14 (2.6.35.6-45.fc14.i686)
+        root (hd0,8)
+        kernel /boot/vmlinuz-2.6.35.6-45.fc14.i686 ro root=UUID=13b69d28-350a-4b17-8b32-96f3847bb3dd rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM LANG=en_US.UTF-8 SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet
+        initrd /boot/initramfs-2.6.35.6-45.fc14.i686.img
+title Fedora 15 (2.6.40-4.fc15.i686.PAE)
+        root (hd0,10)
+        kernel /boot/vmlinuz-2.6.40-4.fc15.i686.PAE ro root=UUID=127a9897-3ca7-45db-98db-fdfac857faf5 rd_NO_LUKS rd_NO_LVM rd_NO_MD rd_NO_DM LANG=en_US.UTF-8 SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet
+        initrd /boot/initramfs-2.6.40-4.fc15.i686.PAE.img
+title BACK_TRACK 5
+        root (hd0,7)
+        kernel  /boot/vmlinuz-2.6.38 root=UUID=aea8402e-57a1-43fb-98e6-1001fa6ac47b ro   text splash nomodeset vga=791
+        initrd  /boot/initrd.img-2.6.38
+title 'Ubuntu, with Linux 2.6.38' --class ubuntu --class gnu-linux --class gnu --class os {
+	recordfail
+	insmod ext2
+	set root='(hd0,8)'
+	search --no-floppy --fs-uuid --set aea8402e-57a1-43fb-98e6-1001fa6ac47b
+	linux	/boot/vmlinuz-2.6.38 root=UUID=aea8402e-57a1-43fb-98e6-1001fa6ac47b ro   text splash nomodeset vga=791
+	initrd	/boot/initrd.img-2.6.38
+}
